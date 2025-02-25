@@ -11,22 +11,17 @@ public class resultWriter {
 		outputFilePath = filepath;
 	}
 
-	public boolean writeResult(TreeMap <String, Integer> inputMap) throws IOException {
-		File result = new File(outputFilePath);
-		if (result.createNewFile()) {
-			FileWriter obj = new FileWriter(outputFilePath);
-			inputMap.forEach((key, value) -> {
-				try {
-					obj.write(key + " - " + value);
-					System.out.println(key + " - " + value);
+	public void writeResult(TreeMap <String, Integer> inputMap) throws IOException {	
+		FileWriter obj = new FileWriter(outputFilePath);
+		inputMap.forEach((key, value) -> {
+			try {
+				obj.write(key + " - " + value + "\n");
+					System.out.println(key + " - " + value + "\n");
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			});
 			obj.close();
-		}
-		return true;
 	}
 }
 
