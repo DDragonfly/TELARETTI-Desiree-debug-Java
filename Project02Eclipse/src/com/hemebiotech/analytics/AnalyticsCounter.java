@@ -2,6 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class AnalyticsCounter {
@@ -23,15 +24,21 @@ public class AnalyticsCounter {
 		 * 
 		 * @Output number of occurrences
 		 */
-		while (i< symptoms.size()) {
+        for (String symptom : symptoms) {
+            symptomsCounter.put(symptom, symptomsCounter.getOrDefault(symptom, 0) + 1);
+        }
+		/*while (i< symptoms.size()) {
 			symptomsCounter.put(symptoms.get(i),  symptomsCounter.getOrDefault(symptoms.get(i), 0) + 1);
 			i++;
-		}
+		}*/
+        System.out.println("Symptoms:");
+        for (Map.Entry<String, Integer> entry : symptomsCounter.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
 		/**
-		 * Write the ordered symptoms with occurrences in Result.txt
+		 * Write the ordered symptoms with occurrences in result.out
 		 */
-		resultWriter writer = new resultWriter("Result.txt");
-		writer.writeResult(symptomsCounter);
-		
+		ISymptomWriter writer = new WriteSymptomDataToFile("result.out");
+		writer.writeSymptoms(symptomsCounter);
 	}
 }

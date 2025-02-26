@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics;
+/*package com.hemebiotech.analytics;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,8 +6,11 @@ import java.util.TreeMap;
 
 public class resultWriter {
 	String outputFilePath;
-	
-	public resultWriter(String filepath) {
+	/**
+	 * Create the file Result.txt and write the result in it
+	 * @param filepath
+	 */
+	/*public resultWriter(String filepath) {
 		outputFilePath = filepath;
 	}
 
@@ -24,4 +27,4 @@ public class resultWriter {
 			obj.close();
 	}
 }
-
+*/
