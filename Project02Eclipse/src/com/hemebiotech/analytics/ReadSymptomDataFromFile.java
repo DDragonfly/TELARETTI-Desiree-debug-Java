@@ -20,7 +20,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 */
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath; //setting filepath
-		System.out.println("File da leggere: " + filepath);
 	}
 	
 	@Override

@@ -1,7 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.io.IOException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +11,7 @@ public class AnalyticsCounter {
 	private ISymptomReader reader;
 	private ISymptomWriter writer;
 	
-	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
+	public AnalyticsCounter(final ISymptomReader reader, final ISymptomWriter writer) {
 		this.reader = reader;
 		this.writer = writer;
 	}
