@@ -2,19 +2,26 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
-
+/**
+ * implements the interface
+ * 
+ * write the content of a map into a file
+ */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 	
 	private String filepath;
-	
+	/**
+	 * finds the filepath of the document we want to write into
+	 * @param filepath
+	 */
 	public WriteSymptomDataToFile(String filepath) {
 		this.filepath = filepath;
 	}
-	
+	/**
+	 * tries to write the output file or returns an error message
+	 */
 	@Override
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		
