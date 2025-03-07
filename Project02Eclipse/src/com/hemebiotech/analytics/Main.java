@@ -6,9 +6,16 @@ import java.util.Map;
 /**
  * initialize the objects of the different classes
  * implements the methods of the different classes
+ * executes the steps to read, process, sort process, sort, and write symptom data
  */
 public class Main {
-	
+	/**
+	 * Main method
+	 * it reads symptoms from a file
+	 * sort symptoms alphabetically
+	 * writes the results to an output file
+	 * @param args
+	 */
 	public static void main(String[] args) {
 	
 		ISymptomReader reader = new ReadSymptomDataFromFile("symptoms.txt");

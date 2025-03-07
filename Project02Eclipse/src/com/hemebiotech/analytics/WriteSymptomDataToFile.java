@@ -5,22 +5,26 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * implements the interface
+ * implements the interface that writes the symptoms to a file
  * 
- * write the content of a map into a file
+ * The class takes a file path as imput and it writes the content of a map into the file
+ * 
  */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 	
 	private String filepath;
 	/**
 	 * finds the filepath of the document we want to write into
-	 * @param filepath
+	 * @param filepath is the file where the symptoms will be written
 	 */
 	public WriteSymptomDataToFile(String filepath) {
 		this.filepath = filepath;
 	}
 	/**
 	 * tries to write the output file or returns an error message
+	 * each symptom is written on a new line with their occurrences
+	 * 
+	 * @param symptoms containing symptoms names as keys and the occurrences as values
 	 */
 	@Override
 	public void writeSymptoms(Map<String, Integer> symptoms) {
